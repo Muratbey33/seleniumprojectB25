@@ -1,0 +1,179 @@
+Today's schedule:
+	#1- Review
+	#2- Task1-2
+	#3- Create utility class
+	#4- Task
+	#5- .isDisplayed()
+	#6- cssSelector
+	#7- xpath
+
+------------------------------------------------------------
+
+- What is maven?
+- Maven is build automation tool.
+
+- What is build?
+- Repeated steps when creating the project and also managing the project.
+- such as; creating the folder structure, adding dependencies, managing dependencies, compiling, deploying...
+
+- Is maven for testers? Was it created for testers?
+- No. It is a developer tool. We use it to take advantage of some of its functionalities.
+
+- Is maven the only "build automation tool" out there?
+- No. Ant, Gradle
+
+- .findElement(By.locator("STRING"))
+
+- What does it do?
+- Finds and returns a single web element.
+
+- What does it accept as argument?
+- It accepts locator parameter as String.
+
+- What is the return type?
+- WebElement type: comes from Selenium library.
+
+- What kind of exception does it throw?
+- It will throw NoSuchElementException if it cannot somehow find given web element.
+
+- What happens when exception is thrown in Selenium code execution? Is it going to execute the rest of the lines?
+- Once it throws the exception, the rest of the lines will not be executed UNLESS we handle it.
+
+- When do we have NoSuchElementException?
+#1- Wrong locator provided
+#2- Synchronization: when browser driver and browser are not on the same page, driver will try to find a web element that is not loaded yet. If this happens, it will throw NoSuchElementException.
+
+- .click();
+- What does it do?
+- It clicks to the given web element.
+
+- Does it accept argument?
+- No.
+
+- Does it work just by itself --> driver.click();
+- driver.findElement(locator).click();
+
+
+- .sendKeys();
+- What does it do?
+- It will pass the provided string into given WebElement.
+
+- Does it accept argument?
+- Yes. It accepts String argument.
+- We can pass Keys. commands into sendKeys() method as well.
+
+- Keys.ENTER:
+- This piece of code will imitate user pressing ENTER from keyboard.
+
+LOCATORS:
+
+- How many total locators we have?
+- Selenium has total of 8 locators.
+
+- id
+- name
+- className
+- linkText
+- partialLinkText
+- tagName
+
+- cssSelector
+- xpath
+
+
+<a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+
+
+1- id:
+	- It will find and return the web element that has matching id attribute value
+	- "id" is always unique.
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+
+syntax: driver.findElement(By.id("bb22"))
+
+2- name:
+	- It will find and return the web element that has matching name attribute value
+	- "name" is NOT always unique
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+syntax: driver.findElement(By.name("uh68"))
+
+3- className:
+	- It will find and return the web element that has matching class attribute value
+	- "class" is NOT always unique
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+syntax: driver.findElement(By.className("ff58"))
+
+
+4- linkText:
+	- It will look through all of the LINKS in the HTML page and return FIRST matching result.
+	- It ONLY ONLY ONLY works with links (<a> tags)
+	- It works similar to .equals method in java.
+	- It is looking for exact String match.
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+syntax: driver.findElement(By.linkText("TESLA CYBERTRUCK"));
+
+5- partialLinkText
+	- It will look through all of the LINKS in the HTML page and return FIRST matching result.
+	- It ONLY ONLY ONLY works with links (<a> tags)
+	- It works similar to .contains method in java.
+	- It is looking for PARTIAL String match.
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+syntax1: driver.findElement(By.partialLinkText("TESLA CYBERTRUCK"));
+syntax2: driver.findElement(By.partialLinkText("CYBERTRUCK"));
+syntax3: driver.findElement(By.partialLinkText("TESLA"));
+syntax4: driver.findElement(By.partialLinkText("ESLA"));
+
+6- tagName:
+- This locator locates using given TAG NAME.
+- We literally pass the TAG name as String parameter.
+- It will find and return first matching result.
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+syntax1: driver.findElement(By.tagName("a"));
+
+- What happens if we provide name,class attribute value and there is more than 1 result?
+- It will find and return the first matching result.
+
+- .getText();
+- What does it do?
+- It will get the content from in between the opening tag and closing tag
+
+- What is the return type?
+- String
+
+- Does it accept any argument?
+- No.
+
+syntax: We cannot say driver.getText();
+- driver.findElement(locator).getText(); --> it will return the text of given web element
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+
+syntax: driver.findElement(By.name("uh68")).getText() --> TESLA CYBERTRUCK
+
+- .getAttribute();
+- What does it do?
+- It will accept an attribute and return its value.
+- It accepts a String argument
+- Return type is String
+
+ex: <a href="https://tesla.com" name="uh68" class="ff58" id="bb22"> TESLA CYBERTRUCK </a>
+
+syntax: driver.findElement(By.name("uh68")).getAttribute("href") 	--> https://tesla.com
+syntax: driver.findElement(By.name("uh68")).getAttribute("name") 	--> uh68
+syntax: driver.findElement(By.name("uh68")).getAttribute("class") 	--> ff58
+syntax: driver.findElement(By.name("uh68")).getAttribute("id") 		--> bb22
+
+
+
+
+
+
+
+
+

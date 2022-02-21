@@ -1,0 +1,60 @@
+FEB 4TH, FRIDAY
+
+TODAY'S SCHEDULE:
+    - REVIEW
+    - TASK SOLUTION
+    - findElement()
+    - Locators
+    - getText()
+    - getAttribute()
+
+------------------------------------------------------------------------------
+
+- What is Selenium?
+    - Basically Selenium is a bunch of jar files that allows us to automate browsers.
+    - In simple terms, selenium is bunch of jar files (libraries)
+    - We use these jar files to automate browsers
+
+
+- What is Maven?
+    - Maven is a build automation tool.
+    - Maven projects come with certain folder structure and pom.xml file
+
+- What is a build?
+    - Build is repeating steps when creating the projects
+    - Build also includes the repeating steps when managing the project as well.
+
+    -src
+        - main
+        - test
+    - pom.xml
+
+- What is pom.xml file?
+    - It is short for "project object model".
+    - pom.xml file is the most important file in a maven project.
+    - We manage (add, remove, change version of) our dependencies.
+
+- Is Maven for tester?
+    - No. Maven is a tool created for developers.
+    - As testers (SDETs) we will take advantage of some of its functionality.
+
+
+- What version of Selenium we are using?
+    - 3.141.59
+
+- What version of WebDriverManager we are using?
+    - 5.0.3
+
+- If the developers are using both main and test folders, which folder the testers use?
+    - Testers and developers are not working on the same project.
+    - As SDET you will not have access to the source code.
+
+- What is a dependency?
+    - Dependencies are just jar files.
+    - We add to pom.xml file and maven automatically downloads the version of the dependency we provide.
+
+- Where do we get our expected data?
+    - Requirement documents.
+
+- Where do we get the actual data?
+    - Comes from the browser. When we do our testing, we get actual data from browser.
